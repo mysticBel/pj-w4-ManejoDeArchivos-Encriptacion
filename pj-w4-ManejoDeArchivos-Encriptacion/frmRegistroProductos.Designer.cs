@@ -99,7 +99,6 @@
             this.label1.Size = new System.Drawing.Size(661, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRO DE PRODUCTOS SERIALIZADOS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtPrecio
             // 
@@ -144,9 +143,11 @@
             // 
             // pbImagen
             // 
+            this.pbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbImagen.Location = new System.Drawing.Point(443, 130);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(287, 192);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 14;
             this.pbImagen.TabStop = false;
             // 
@@ -158,6 +159,7 @@
             this.btnCargar.TabIndex = 15;
             this.btnCargar.Text = "CARGAR FOTO";
             this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // dtFecha
             // 
@@ -184,6 +186,7 @@
             this.btnRegistrar.TabIndex = 18;
             this.btnRegistrar.Text = "REGISTRAR";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // frmRegistroProductos
             // 
