@@ -179,6 +179,7 @@
             this.btnGrabar.TabIndex = 5;
             this.btnGrabar.Text = "GRABAR EN TXT";
             this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnAgregar
             // 

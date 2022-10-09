@@ -64,5 +64,25 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
                 lvEmpleados.Items.Add(fila);
             }
         }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sv = new SaveFileDialog();
+            sv.Filter = "Archivo de Texto|*.txt";
+            if (sv.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fs = new FileStream(sv.FileName, FileMode.Create);
+                string miEmpleado = "";
+                foreach (Empleado emp in aEmpleados)
+                {
+                    miEmpleado += emp.ide_emp + "|" + emp.nom_emp + "|" +
+                                  emp.sue_emp + "|" + emp.fin_emp.ToShortDateString() + "\n";
+                }
+                StreamWriter sw = new StreamWriter(fs);
+                sw.Write(miEmpleado);
+                sw.Close();
+                fs.Close();
+            }
+        }
     }
 }
