@@ -16,7 +16,7 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmComprimir());
         }
     }
 }

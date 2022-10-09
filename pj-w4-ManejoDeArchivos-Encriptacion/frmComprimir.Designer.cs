@@ -62,6 +62,7 @@
             this.tsAbrir.Name = "tsAbrir";
             this.tsAbrir.Size = new System.Drawing.Size(59, 22);
             this.tsAbrir.Text = "ABRIR";
+            this.tsAbrir.Click += new System.EventHandler(this.tsAbrir_Click);
             // 
             // tsGuardar
             // 
@@ -78,14 +79,16 @@
             this.tsComprimir.Name = "tsComprimir";
             this.tsComprimir.Size = new System.Drawing.Size(93, 22);
             this.tsComprimir.Text = "COMPRIMIR";
+            this.tsComprimir.Click += new System.EventHandler(this.tsComprimir_Click);
             // 
             // tsDescomprimir
             // 
             this.tsDescomprimir.Image = ((System.Drawing.Image)(resources.GetObject("tsDescomprimir.Image")));
             this.tsDescomprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsDescomprimir.Name = "tsDescomprimir";
-            this.tsDescomprimir.Size = new System.Drawing.Size(102, 22);
-            this.tsDescomprimir.Text = "Descomprimir";
+            this.tsDescomprimir.Size = new System.Drawing.Size(113, 22);
+            this.tsDescomprimir.Text = "DESCOMPRIMIR";
+            this.tsDescomprimir.Click += new System.EventHandler(this.tsDescomprimir_Click);
             // 
             // toolStripSeparator1
             // 
