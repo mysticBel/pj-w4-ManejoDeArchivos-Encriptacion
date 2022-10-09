@@ -33,7 +33,7 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
                 op.Filter = "Archivos JPG|*.jpg";
                 if (op.ShowDialog() == DialogResult.OK)
                 {
-                    pbImagen.Image = Image.FromFile(op.FileName);
+                    pbFoto.Image = Image.FromFile(op.FileName);
                 }
             }
             catch (Exception)
@@ -52,7 +52,7 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
                     pre_pro = double.Parse(txtPrecio.Text),
                     sto_pro = int.Parse(txtStock.Text),
                     fve_pro = dtFecha.Value,
-                    fot_pro = (Bitmap)pbImagen.Image
+                    fot_pro = (Bitmap)pbFoto.Image
                 };
 
                 //Grabar con bin(binario)
@@ -68,6 +68,32 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
             }
             catch (Exception)
             {
+            }
+        }
+
+        private void btnDeserializar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog op = new OpenFileDialog();
+                op.Filter = "Archivo Binario|*.bin";
+                if (op.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream fs = new FileStream(op.FileName, FileMode.Open);
+                    BinaryFormatter bf = new BinaryFormatter();
+                    Producto objP = (Producto)bf.Deserialize(fs);
+                    txtCodigo.Text = objP.ide_pro.ToString();
+                    txtDescripcion.Text = objP.des_pro;
+                    txtPrecio.Text = objP.pre_pro.ToString();
+                    txtStock.Text = objP.sto_pro.ToString();
+                    dtFecha.Value = objP.fve_pro;
+                    pbFoto.Image = objP.fot_pro;
+                    fs.Close();
+                }
+            }
+            catch (Exception)
+            {
+
             }
         }
     }

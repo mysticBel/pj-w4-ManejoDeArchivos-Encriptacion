@@ -39,13 +39,14 @@
             this.txtStock = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
             this.btnCargar = new System.Windows.Forms.Button();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnDeserializar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDescripcion
@@ -141,15 +142,15 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "VISTA PREVIA :";
             // 
-            // pbImagen
+            // pbFoto
             // 
-            this.pbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImagen.Location = new System.Drawing.Point(443, 130);
-            this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(287, 192);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImagen.TabIndex = 14;
-            this.pbImagen.TabStop = false;
+            this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbFoto.Location = new System.Drawing.Point(443, 130);
+            this.pbFoto.Name = "pbFoto";
+            this.pbFoto.Size = new System.Drawing.Size(287, 192);
+            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFoto.TabIndex = 14;
+            this.pbFoto.TabStop = false;
             // 
             // btnCargar
             // 
@@ -180,24 +181,35 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(43, 356);
+            this.btnRegistrar.Location = new System.Drawing.Point(43, 357);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(286, 32);
+            this.btnRegistrar.Size = new System.Drawing.Size(137, 32);
             this.btnRegistrar.TabIndex = 18;
             this.btnRegistrar.Text = "REGISTRAR";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // btnDeserializar
+            // 
+            this.btnDeserializar.Location = new System.Drawing.Point(195, 356);
+            this.btnDeserializar.Name = "btnDeserializar";
+            this.btnDeserializar.Size = new System.Drawing.Size(137, 32);
+            this.btnDeserializar.TabIndex = 19;
+            this.btnDeserializar.Text = "DESERIALIZAR";
+            this.btnDeserializar.UseVisualStyleBackColor = true;
+            this.btnDeserializar.Click += new System.EventHandler(this.btnDeserializar_Click);
             // 
             // frmRegistroProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeserializar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.btnCargar);
-            this.Controls.Add(this.pbImagen);
+            this.Controls.Add(this.pbFoto);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.label3);
@@ -212,7 +224,7 @@
             this.Text = "frmRegistroProductos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,10 +243,11 @@
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pbImagen;
+        private System.Windows.Forms.PictureBox pbFoto;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.DateTimePicker dtFecha;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnDeserializar;
     }
 }

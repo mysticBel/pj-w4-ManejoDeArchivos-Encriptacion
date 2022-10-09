@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //agregar
-using System.Drawing;
+//using System.Drawing;
 
 namespace pj_w4_ManejoDeArchivos_Encriptacion
 {
@@ -15,7 +15,7 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
     // Producto se convertira en codigo de bytes
 
     [Serializable()] 
-    internal class Producto
+    public class Producto
     {
         public int ide_pro { get; set; }
         public string des_pro { get; set; }
