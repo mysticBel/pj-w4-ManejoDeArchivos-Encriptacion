@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-using System.IO;
-using System.IO.Compression;
+/*using System.IO;
+using System.IO.Compression;*/ 
 
 namespace pj_w4_ManejoDeArchivos_Encriptacion
 {
@@ -25,27 +25,31 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
 
         private void tsComprimir_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sv = new SaveFileDialog();
+
+            SaveFileDialog sv = new SaveFileDialog(); //abre la  ventana para guardar
             sv.Filter = "Archivo comprimido ZIP | *.zip |Archivo comprimido RAR | *.rar";
-            if (sv.ShowDialog() == DialogResult.OK) { 
+            if (sv.ShowDialog() == DialogResult.OK) {  //si guarda
+                ////Enviando la informacion en un espacio de memoria
                 MemoryStream ms = new MemoryStream();
                 StreamWriter sw = new StreamWriter(ms);
-                sw.Write(txtEditor.Text);
-                //que corra de manera secuencial
-                sw.Flush();
+                sw.Write(txtEditor.Text); 
+                sw.Flush();//que guarde de manera secuencial
 
-                FileStream fs = new FileStream(sv.FileName, FileMode.Create);
-                //zipeado
-                GZipStream zip = new GZipStream(fs, CompressionMode.Compress);
+                ////Comprimir los datos desde la memoria
+                FileStream fs = new FileStream(sv.FileName, FileMode.Create); //mode creacion
+                GZipStream zip = new GZipStream(fs, CompressionMode.Compress); //zipeado, debo indicarle el modo de compresion : Compress
 
-                zip.Write(ms.ToArray(), 0, ms.ToArray().Length);
+                zip.Write(ms.ToArray(), 0, ms.ToArray().Length); //compara como esta el archivo antiguo con el que se esta comprimiendo en la memoria
+                                                                // el 0 se coloca para comparar
                 zip.Close();
-                fs.Close();
+                fs.Close(); //siempre se cierra el GZipStream y el FileSTream
             }
         }
 
         private void tsDescomprimir_Click(object sender, EventArgs e)
         {
+            ///Para mostrar un archivo que ya fue comprimido en el txtEditor
+
             OpenFileDialog op = new OpenFileDialog();
             op.Filter = "Archivo ZIP | *.zip |Archivo RAR | *.rar  ";
             if (op.ShowDialog() == DialogResult.OK)
@@ -79,6 +83,11 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
                 txtEditor.Text = sr.ReadToEnd();
                 sr.Close();
             }
+        }
+
+        private void tsSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -102,6 +102,7 @@
             this.tsSalir.Name = "tsSalir";
             this.tsSalir.Size = new System.Drawing.Size(57, 22);
             this.tsSalir.Text = "SALIR";
+            this.tsSalir.Click += new System.EventHandler(this.tsSalir_Click);
             // 
             // txtEditor
             // 
