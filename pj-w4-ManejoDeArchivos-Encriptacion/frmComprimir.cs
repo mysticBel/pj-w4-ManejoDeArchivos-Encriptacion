@@ -59,12 +59,12 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
                 GZipStream zip = new GZipStream(fs, CompressionMode.Decompress);
 
                 Byte[] info = new Byte[4096];
-                zip.Read(info, 0, info.Length);
+                zip.Read(info, 0, info.Length); //compara la información antigua en la memoria
 
                 MemoryStream ms = new MemoryStream();
                 ms.Write(info, 0, info.Length);
 
-                //Obtener la información de la memoria
+                //Obtener la información de la memoria y enviar al txtEditos
                 ms.Position = 0;
                 StreamReader sr = new StreamReader(ms);
                 txtEditor.Text = sr.ReadToEnd();
