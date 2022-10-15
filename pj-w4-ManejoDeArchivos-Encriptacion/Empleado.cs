@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pj_w4_ManejoDeArchivos_Encriptacion
 {
-    internal class Empleado
+    public class Empleado
     {
         public int ide_emp { get; set; }
         public string nom_emp { get; set; }
