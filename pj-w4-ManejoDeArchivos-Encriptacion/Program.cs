@@ -19,7 +19,8 @@ namespace pj_w4_ManejoDeArchivos_Encriptacion
             //Application.Run(new frmComprimir()); proyecto1
             //Application.Run(new frmRegistro()); //proyecto2
             //Application.Run(new frmRegistroProductos()); //proyecto3
-            Application.Run(new frmEmpleadoXML());   //proyecto4
+            //Application.Run(new frmEmpleadoXML());   //proyecto4
+            Application.Run(new frmArrEmpleadoJSON()); //proyecto 5
         }
     }
 }
